@@ -1,0 +1,22 @@
+server:
+  port: 80
+  tomcat:
+    uri-encoding: utf-8
+    max-threads: 1000
+    max-connections: 900
+    min-spare-threads: 100
+    accesslog:
+      pattern: '%{X-Forwarded-For}i %h %l %u %t "%r" %s %b %T'
+      enabled: false
+      directory: ${user.dir}/logs
+      prefix: access.${HOST:127.0.0.1}.${server.port:8080}
+
+spring:
+  mail:
+    host: smtp.163.com    #发邮件配置
+    username: zhzhair_java@163.com
+    password: ******** # year + name 这里是您自己给您邮箱申请的授权码，授权码不对或没有连接外网启动就会报错
+    properties.mail.smtp:
+      auth: true
+    #starttls.enable: true
+    #starttls.required: true
